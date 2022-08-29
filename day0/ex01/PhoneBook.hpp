@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:31 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/29 21:21:10 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/29 21:53:27 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ class PhoneBook {
 		~PhoneBook(void);
 
 		void	printHeader(void);
-		void	addContact(int index);
-		void	searchContact(int index);
+		void	printAllContacts(void);
+		void	addContact(void);
+		void	searchContact(void);
 
 	private:
-		Contact contacts[8];
+		static int	_numContacts;
+		static int	_oldestContact;
+		Contact		_contacts[8];
 };
 
 #endif
