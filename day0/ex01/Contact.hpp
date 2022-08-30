@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:36 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/29 19:20:23 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/30 21:49:02 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Contact {
 		static std::string	_editContent(std::string content);
 		static std::string	_cleanContent(std::string content);
 		static std::string	_setPhoneNumber(std::string content);
+		static std::string	_setField(std::string fieldName);
 		static bool			_setContent(std::string type, std::string content);
 		static bool			_is_printable(char c);
 };
