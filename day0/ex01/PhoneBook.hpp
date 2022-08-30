@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:31 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/29 21:53:27 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/30 13:51:54 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ class PhoneBook {
 		void	searchContact(void);
 
 	private:
+		static int	_nextAdd;
 		static int	_numContacts;
-		static int	_oldestContact;
+		static bool	_idNumeric(std::string id);
 		Contact		_contacts[8];
 };
 

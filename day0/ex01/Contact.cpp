@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:35 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/29 21:16:44 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/30 11:30:46 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Contact::~Contact( void ){
 
 bool _not_printable(char c)
 {
-	if (!std::is_print(c))
+	if (!std::isprint(c))
 		return (true);
 	return (false);
 };
@@ -33,9 +33,9 @@ std::string Contact::_editContent(std::string content){
 	return (content);
 };
 
-std::string Contact::_cleanContent(std::string content){
-	return(content.erase(std::remove_if(content.begin(), content.end(), _not_printable), content.end()));
-};
+// std::string Contact::_cleanContent(std::string content){
+// 	return(content.erase(std::remove_if(content.begin(), content.end(), _not_printable), content.end()));
+// };
 
 void	Contact::printSpecificContact(void)
 {
