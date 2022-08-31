@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:41:05 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 13:47:29 by pierina          ###   ########.fr       */
+/*   Updated: 2022/08/31 13:53:44 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,20 @@ Account::~Account(void){
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "closed" << std::endl;
+}
+
+int	Account::getNbAccounts(void){
+	return (Account::_nbAccounts);
+}
+
+int	Account::getTotalAmount(void){
+	return (Account::_totalAmount);
+}
+
+int	Account::getNbDeposits(void){
+	return (Account::_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals(void){
+	return (Account::_totalNbWithdrawals);
 }
