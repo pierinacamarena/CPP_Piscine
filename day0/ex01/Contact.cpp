@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:35 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/30 21:50:05 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/31 11:39:29 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,10 @@ std::string	Contact::_setPhoneNumber(std::string content){
 	}
 }
 
+// std::string Contact::_cleanContent(std::string content){
+// 	return(content.erase(std::remove_if(content.begin(), content.end(), _not_printable), content.end()));
+// };
+
 std::string Contact::_setField(std::string fieldName)
 {
 	std::string content;
@@ -81,6 +85,8 @@ std::string Contact::_setField(std::string fieldName)
 		std::getline(std::cin, content);
 		if (std::cin.eof())
 			exit(1);
+		if (fieldName.compare("Phone Number") == 0)
+			content = Contact::_setPhoneNumber(content);
 	}
 	return (content);
 }
@@ -96,41 +102,8 @@ void	Contact::setContact(int index){
 	this->_first_name = this->_setField("First Name");
 	this->_last_name = this->_setField("Last Name");
 	this->_nickanme = this->_setField("Nickname");
-	while (content.empty())
-	{
-		std::cout << "Enter the phone number of the contact: ";
-		std::getline(std::cin, content);
-		if (std::cin.eof())
-			exit(1);
-		content = this->_setPhoneNumber(content);
-	}
-	this->_phone_number = content;
+	this->_phone_number = this->_setField("Phone Number");
 	this->_darkest_secret = this->_setField("Darkest Secret");
 	std::cout << "Done adding the information of the contact" << std::endl;
 	std::cout << std::endl;
 }
-
-// bool Contact::_setContent(std::getline *content){
-// 	std::getline(std::cin, content);
-// 	if (std::cin.eof())
-// 		exit (1);
-// 	content = this->_cleanContent(content);
-// 	if (!content.empty())
-// 		return (true);
-// 	std::cout << "invalid input" << std::endl;
-// 	return (false);
-// }
-
-// void	Contact::setContactProtected(int index)
-// {
-// 	std::string content;
-// 	this->_index = index;
-// 	std::cout << "Adding a new contact" << std::endl;
-// 	std::cout << "Enter the First Name of the contact";
-// 	this->_setContent();
-// 	if ()
-// }
-
-// std::string Contact::_cleanContent(std::string content){
-// 	return(content.erase(std::remove_if(content.begin(), content.end(), _not_printable), content.end()));
-// };

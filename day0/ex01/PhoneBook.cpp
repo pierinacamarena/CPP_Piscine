@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:17 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/30 21:10:28 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/31 10:15:13 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void	PhoneBook::searchContact(void)
 		std::cout << "id out of range" << std::endl;
 		return ;
 	}
-	if (idInt > this->_numContacts || this->_firstSet == 0){
+	if (idInt >= this->_numContacts || this->_firstSet == 0){
 		std::cout << "This id does not refer to an existing contact" << std::endl;
 		return ;
 	}
