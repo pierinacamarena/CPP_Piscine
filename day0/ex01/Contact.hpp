@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:36 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/30 21:49:02 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:07:34 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
+#include <iomanip>
+#include <ctype.h>
 
 class Contact {
 	public:

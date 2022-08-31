@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:35 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 11:39:29 by pierina          ###   ########.fr       */
+/*   Updated: 2022/08/31 19:01:36 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ std::string Contact::_setField(std::string fieldName)
 		std::cout << "Enter the " << fieldName << " of the contact: ";
 		std::getline(std::cin, content);
 		if (std::cin.eof())
-			exit(1);
+			std::exit(1);
 		if (fieldName.compare("Phone Number") == 0)
 			content = Contact::_setPhoneNumber(content);
 	}

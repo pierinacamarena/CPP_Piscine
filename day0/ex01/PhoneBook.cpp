@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:17 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 10:15:13 by pierina          ###   ########.fr       */
+/*   Updated: 2022/08/31 19:11:03 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ bool	PhoneBook::_idNumeric(std::string id){
 
 void	PhoneBook::searchContact(void)
 {
-	std::string id;
+	std::string	id;
 	int			idInt;
 	this->printHeader();
 	this->printAllContacts();
 	std::cout << "Enter the id of the required contact: ";
 	std::getline(std::cin, id);
 	if(std::cin.eof())
-		exit(1);
+		std::exit(1);
 	if (id.empty()){
 		std::cout << "Not a valid id" << std::endl;
 		return ;
@@ -89,7 +89,7 @@ void	PhoneBook::searchContact(void)
 		std::cout << "id must be a numeric value between 0 and 7" << std::endl;
 		return ;
 	}
-	idInt = std::stoi(id);
+	idInt = std::atoi(id.c_str());
 	if (idInt < 0 || idInt > 7){
 		std::cout << "id out of range" << std::endl;
 		return ;

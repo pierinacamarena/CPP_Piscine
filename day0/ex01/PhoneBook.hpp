@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:31 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/30 21:07:28 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/08/31 19:07:17 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <string.h>
+#include <cstdlib>
+#include <iomanip>
+#include <ctype.h>
 #include "Contact.hpp"
 
 class PhoneBook {

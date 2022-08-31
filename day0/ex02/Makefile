@@ -5,14 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/24 15:37:37 by pierina           #+#    #+#              #
-#    Updated: 2022/08/31 18:58:51 by pcamaren         ###   ########.fr        #
+#    Created: 2022/08/31 18:57:58 by pcamaren          #+#    #+#              #
+#    Updated: 2022/08/31 19:12:43 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	megaphone
+NAME	=	account
 
-SRCS	=	./Megaphone.cpp
+SRCS	=	./Account.cpp\
+			./tests.cpp
 
 OBJS	=	${SRCS:.c=.o}
 
