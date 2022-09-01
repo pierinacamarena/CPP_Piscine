@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:35 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/01 18:03:44 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:11:37 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ std::string Contact::_setField(std::string fieldName)
 		if (std::cin.eof())
 			std::exit(1);
 		if (fieldName.compare("Phone Number") == 0)
-			content = Contact::_setPhoneNumber(content);
+			content = Contact::_verifyPhoneNumber(content);
 	}
 	return (content);
 }

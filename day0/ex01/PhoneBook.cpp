@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:17 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 19:11:03 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:13:06 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,14 @@ void	PhoneBook::addContact(void){
 	return ;
 }
 
-bool	PhoneBook::_idNumeric(std::string id){
+bool	PhoneBook::_idIsNumeric(std::string id){
 	size_t	i = 0;
 	while (i < id.length()){
 		if (!std::isdigit(id[i]))
-			break;
+			return (false);
 		i++;
 	}
-	if (i == id.length())
-		return (true);
-	return (false);
+	return (true);
 }
 
 void	PhoneBook::searchContact(void)
@@ -84,7 +82,7 @@ void	PhoneBook::searchContact(void)
 		std::cout << "Not a valid id" << std::endl;
 		return ;
 	}
-	if (!this->_idNumeric(id))
+	if (!this->_idIsNumeric(id))
 	{
 		std::cout << "id must be a numeric value between 0 and 7" << std::endl;
 		return ;

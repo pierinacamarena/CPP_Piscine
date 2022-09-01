@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:33:31 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 19:07:17 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:12:52 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class PhoneBook {
 		int			_nextAdd;
 		int			_numContacts;
 		int			_firstSet;
-		static bool	_idNumeric(std::string id);
+		static bool	_idIsNumeric(std::string id);
 };
 
 #endif
