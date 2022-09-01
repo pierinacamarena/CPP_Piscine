@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 13:07:36 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 10:12:41 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/01 18:01:38 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main(void)
 	while (loop){
 		std::cout << "Enter a command [ADD/SEARCH/EXIT]:" << std::endl;
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			std::exit(1);
 		if (cmd.compare("ADD") == 0)
 			phonebook.addContact();
 		else if (cmd.compare("SEARCH") == 0)

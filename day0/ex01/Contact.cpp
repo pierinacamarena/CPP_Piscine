@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 10:30:35 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 19:01:36 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:03:44 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,11 @@ Contact::Contact( void ){
 Contact::~Contact( void ){
 }
 
-bool _not_printable(char c)
-{
-	if (!std::isprint(c))
-		return (true);
-	return (false);
-}
-
 std::string Contact::_editContent(std::string content){
 	if (content.size() > 10)
 		return (content.substr(0, 9) + '.');
 	return (content);
 }
-
 
 void	Contact::printSpecificContact(void)
 {
@@ -53,28 +45,21 @@ void	Contact::printContactFullInfo(void){
 	std::cout << "Darkest Secret: " << this->_darkest_secret << std::endl;
 }
 
-std::string	Contact::_setPhoneNumber(std::string content){
+std::string	Contact::_verifyPhoneNumber(std::string content){
 	size_t	i = 0;
 	if (content[0] == '+')
 		i++;
 	while (i < content.length())
 	{
 		if (!std::isdigit(content[i]))
-			break;
+		{
+			std::cout << "Phone number not valid" << std::endl;
+			return ("");
+		}
 		i++;
 	}
-	if (i == content.length())
-		return (content);
-	else
-	{
-		std::cout << "Phone number not valid" << std::endl;
-		return ("");
-	}
+	return (content);
 }
-
-// std::string Contact::_cleanContent(std::string content){
-// 	return(content.erase(std::remove_if(content.begin(), content.end(), _not_printable), content.end()));
-// };
 
 std::string Contact::_setField(std::string fieldName)
 {

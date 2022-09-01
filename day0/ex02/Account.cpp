@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 10:41:05 by pierina           #+#    #+#             */
-/*   Updated: 2022/08/31 18:44:46 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:09:06 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,12 @@ void	Account::displayAccountsInfos(void){
 }
 
 void	Account::_displayTimestamp(void){
-
+	// std::cout << "[19920104_091532] ";
 	std::time_t oldTime = std::time(0);
 	std::tm* newTime = std::localtime(&oldTime);
 	std::cout << "[" << newTime->tm_year + 1900;
 	std::cout << "0" << newTime->tm_mon + 1;
-	std::cout << newTime->tm_mday << "_";
+	std::cout << "0" << newTime->tm_mday << "_";
 	std::cout << newTime->tm_hour << newTime->tm_min << newTime->tm_sec;
 	std::cout << "] ";
 }
@@ -120,5 +120,5 @@ void	Account::displayStatus(void) const{
 	std::cout << "index:" << this->_accountIndex << ";";
 	std::cout << "amount:" << this->_amount << ";";
 	std::cout << "deposits:" << this->_nbDeposits << ";";
-	std::cout << "withdrawal:" << this->_nbWithdrawals << std::endl;
+	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 }
