@@ -6,12 +6,12 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 20:08:13 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/01 20:08:33 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:29:43 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-#define ZOMBIE_H
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>

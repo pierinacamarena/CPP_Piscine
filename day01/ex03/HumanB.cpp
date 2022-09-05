@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 09:29:51 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/02 12:41:22 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/05 15:41:40 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,14 @@ HumanB::~HumanB(void){
 }
 
 void	HumanB::attack(){
-	std::cout << this->_name << " attacks with their " \
-	<< this->_weapon->getType() << std::endl;
+	if (this->_weapon == NULL)
+		std::cout << this->_name << " attacks au naturel" << std::endl;
+	else
+		std::cout << this->_name << " attacks with their " \
+		<< this->_weapon->getType() << std::endl;
 }
 
 void	HumanB::setWeapon(Weapon& weapon){
+	
 	this->_weapon = &weapon;
 }

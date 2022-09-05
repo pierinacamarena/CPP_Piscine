@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/08/31 19:35:32 by pcamaren          #+#    #+#              #
-#    Updated: 2022/09/05 18:20:42 by pcamaren         ###   ########.fr        #
+#    Created: 2022/09/05 19:07:08 by pcamaren          #+#    #+#              #
+#    Updated: 2022/09/05 19:07:25 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	harl
+NAME	=	harlFilter
 			
 SRCS	=	./main.cpp\
 			./Harl.cpp

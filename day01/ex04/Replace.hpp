@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 20:08:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/05 18:29:05 by pcamaren         ###   ########.fr       */
+/*   Created: 2022/09/02 17:07:26 by pcamaren          #+#    #+#             */
+/*   Updated: 2022/09/05 18:31:17 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef REPLACE_HPP
+#define REPLACE_HPP
 
+#include <fstream>
 #include <iostream>
-#include <string>
 
-class Zombie{
+class Replace{
 	public:
-
-		Zombie(void);
-		Zombie(std::string name);
-		~Zombie(void);
-	
-		void		announce(void);
-		void		zombieNameSet(std::string name);
+		Replace(void);
+		Replace(std::string s1, std::string s2);
+		~Replace(void);
+		void	replaceStringOcurr(std::ifstream &inFile, std::ofstream& outFile);
 		
 	private:
-	
-		std::string _name;
+		std::string _search;
+		std::string	_replace;
 };
-
-Zombie*	zombieHorde(int N, std::string name);
 
 #endif

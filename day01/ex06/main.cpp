@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 20:08:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/05 18:29:05 by pcamaren         ###   ########.fr       */
+/*   Created: 2022/09/05 18:54:27 by pcamaren          #+#    #+#             */
+/*   Updated: 2022/09/05 19:32:55 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string>
-
-class Zombie{
-	public:
-
-		Zombie(void);
-		Zombie(std::string name);
-		~Zombie(void);
-	
-		void		announce(void);
-		void		zombieNameSet(std::string name);
-		
-	private:
-	
-		std::string _name;
-};
-
-Zombie*	zombieHorde(int N, std::string name);
-
-#endif
+int main(int ac, char **av){
+	if  (ac == 2) {
+		Harl harl;
+		harl.complain(av[1]);
+		return (0);
+	}
+	else {
+		std::cout << "error: wrong number of arguments" << std::endl;
+		return (1);
+	}
+}

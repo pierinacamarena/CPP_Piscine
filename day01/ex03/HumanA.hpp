@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/02 09:29:49 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/02 12:40:02 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/05 18:29:22 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMAN_A
-#define HUMAN_A
+#ifndef HUMAN_A_HPP
+#define HUMAN_A_HPP
 
 #include "Weapon.hpp"
 

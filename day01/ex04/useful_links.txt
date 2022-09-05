@@ -1,0 +1,3 @@
+https://thispointer.com/c-how-to-read-a-file-line-by-line-into-a-vector/
+https://thispointer.com/find-all-occurrences-of-a-sub-string-in-a-string-c-both-case-sensitive-insensitive/
+https://stackoverflow.com/questions/4643512/replace-substring-with-another-substring-c
