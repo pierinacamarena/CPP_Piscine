@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 21:32:09 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/07 12:38:56 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/07 16:59:02 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ public:
 private:
 
 	int					_value;
-	static const int	_numBits;
+	static const int	_numBits = 8;
 };
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & i);

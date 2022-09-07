@@ -5,27 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/05 19:58:02 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/07 19:03:21 by pcamaren         ###   ########.fr       */
+/*   Created: 2022/09/06 16:36:31 by pcamaren          #+#    #+#             */
+/*   Updated: 2022/09/06 18:46:07 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "Sample.hpp"
 
-int	main( void ) {
+int main(){
 
-	Fixed		a;
-	Fixed const	b( Fixed( 5.05f) * Fixed( 2 ));
+	Sample	instance1;
+	Sample	instance2( 42 );
+	Sample	instance3( instance1 );
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << instance1 << std::endl;
+	std::cout << instance2 << std::endl;
+	std::cout << instance3 << std::endl;
 
-	std::cout << b << std::endl;
-
-	std::cout << Fixed::max( a, b ) << std::endl;
+	instance3 = instance2;
+	std::cout << instance3 << std::endl;
 
 	return 0;
 }

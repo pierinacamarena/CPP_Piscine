@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 21:32:23 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/07 12:10:52 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/07 17:01:31 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-int	_numBits = 8;
 
 Fixed::Fixed() : _value(0){
 	
@@ -24,14 +22,16 @@ Fixed::Fixed() : _value(0){
 Fixed::Fixed(int const n) {
 
 	std::cout << "Int Constructor called" << std::endl;
-	_value = n * (1 << _numBits);
+	_value = n << this->_numBits;
+
 	return ;
 }
 
 Fixed::Fixed(float const f) {
 
 	std::cout << "Float Constructor called" << std::endl;
-	
+	_value = roundf(f * (1 << this->_numBits));
+
 	return;
 }
 
@@ -74,9 +74,17 @@ void	Fixed::setRawBits( int const raw ) {
 }
 
 float	Fixed::toFloat( void ) const {
-	
+
+	return ((float)(this->_value / (float)(1 << this->_numBits)));
 }
 
 int		Fixed::toInt( void ) const {
-	
+
+	return (this->_value >> this->_numBits);
+}
+
+std::ostream &	operator<<(std::ostream & o, Fixed const & i) {
+
+	o << i.toFloat();
+	return (o);
 }
