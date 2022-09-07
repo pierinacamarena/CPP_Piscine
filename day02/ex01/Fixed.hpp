@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 21:32:09 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/06 21:35:45 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/07 12:38:56 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <cmath>
+#include <string>
 
 class	Fixed {
 	
@@ -26,10 +28,13 @@ public:
 	~Fixed( void );
 
 	Fixed &		operator=( Fixed const & rhs);
-	float		toFloat( void ) const;
-	int			toInt( void ) const;
+
 	int			getRawBits( void ) const;
 	void		setRawBits( int const raw );
+	
+	float		toFloat( void ) const;
+	int			toInt( void ) const;
+	
 
 private:
 
@@ -37,4 +42,11 @@ private:
 	static const int	_numBits;
 };
 
+std::ostream &	operator<<(std::ostream & o, Fixed const & i);
+
 #endif
+
+
+// And add the following function to the Fixed class files:
+// • An overload of the insertion («) operator that inserts a floating-point representation
+// of the fixed-point number into the output stream object passed as parameter.

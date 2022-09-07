@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/06 19:02:15 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/06 21:31:20 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/07 10:10:29 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+int	_numBits = 8;
 
 Fixed::Fixed() : _value(0){
 	
@@ -30,7 +32,7 @@ Fixed::Fixed( Fixed const & src ) {
 Fixed &Fixed::operator=(Fixed const & rhs) {
 
 	std::cout << "Copy assignment operator called" << std::endl;
-	_value = rhs._value;
+	_value = rhs.getRawBits();
 	
 	return *this;	
 }
@@ -51,7 +53,8 @@ int	Fixed::getRawBits( void ) const {
 
 void	Fixed::setRawBits( int const raw ) {
 	
-	this->_value = raw;
+	std::cout << "setRawBits member function called" << std::endl;
+	_value = raw;
 
 	return ;
 }
