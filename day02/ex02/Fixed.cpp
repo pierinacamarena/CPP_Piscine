@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:59:00 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/08 21:37:56 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/12 12:24:06 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 Fixed::Fixed() : _value(0){
 	
 	// std::cout << "Default Constructor called" << std::endl;
-	
 	return ;
 }
 
@@ -50,7 +49,6 @@ Fixed::Fixed( Fixed const & src ) {
 Fixed::~Fixed( void ) {
 
 	// std::cout << "Destructor called" << std::endl;
-
 	return ;	
 }
 
@@ -96,7 +94,6 @@ bool	Fixed::operator!=(Fixed const & rhs) const {
 
 Fixed	&Fixed::operator=(Fixed const & rhs) {
 
-	// std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = rhs.getRawBits();
 	
 	return *this;	
@@ -123,26 +120,11 @@ Fixed	Fixed::operator-(Fixed const & rhs) const {
 
 Fixed	Fixed::operator*(Fixed const & rhs) const {
 
-	// return (Fixed(this->toFloat() * rhs.toFloat()));
-	// Fixed multi(*this);
-	// multi.setRawBits(this->toFloat() * rhs.toFloat());
-
-	// return multi;
-
-	Fixed	value;
-
-	// value.setRawBits(this->getRawBits() * rhs.getRawBits() / (1 << this->_numBits));
-	value.setRawBits(this->toFloat() * rhs.toFloat());
-	// value.toFloat();
-	return (value);
+	return (Fixed(this->toFloat() * rhs.toFloat()));
 }
 
 Fixed	Fixed::operator/(Fixed const & rhs) const {
 
-	// Fixed div;
-	// div.setRawBits(this->toFloat() / rhs.toFloat());
-
-	// return div;
 	return (Fixed(this->toFloat() / rhs.toFloat()));
 
 }
@@ -167,27 +149,27 @@ Fixed & Fixed::operator--( void ) {
 //Postfix
 
 Fixed	Fixed::operator++( int ) {
-	
-	Fixed increment;
 
-	increment._value++;
+	Fixed increment(*this);
+
+	this->_value++;
 	return (increment);
 	
 }
 
 Fixed	Fixed::operator--( int ) {
-	
-	Fixed decrement;
 
-	decrement._value--;
+	Fixed decrement(*this);
+
+	this->_value--;
 	return (decrement);
 }
+
 //Getters and setters
 
 int	Fixed::getRawBits( void ) const {
 
 	// std::cout << "getRawBits member function called" << std::endl;
-
 	return (_value);
 }
 

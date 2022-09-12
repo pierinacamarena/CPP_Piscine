@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/07 18:59:02 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/08 20:53:22 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:54:09 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ public:
 	Fixed &		operator--( void );
 	Fixed		operator++( int );
 	Fixed		operator--( int );
+	
 	int			getRawBits( void ) const;
 	void		setRawBits( int const raw );
 	
