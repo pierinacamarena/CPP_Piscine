@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/05 19:58:02 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/12 12:47:37 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/13 12:09:41 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	main( void ) {
 
+	//Setup
 	Fixed		a;
 	Fixed const	b( Fixed( 5.05f) * Fixed( 2 ));
 
@@ -40,6 +41,18 @@ int	main( void ) {
 	std::cout << b << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 
+	std::cout << "Arithmetic operators" << std::endl;
+	std::cout << "----------------------------------------------------" << std::endl;
+	std::cout << "(a + b)" << std::endl;
+	std::cout << (a + b) << std::endl;
+	std::cout << "(a - b)" << std::endl;
+	std::cout << (a - b) << std::endl;
+	std::cout << "(a * b)" << std::endl;
+	std::cout << (a * b) << std::endl;
+	std::cout << "(a / b)" << std::endl;
+	std::cout << (a / b) << std::endl;
+	std::cout << "----------------------------------------------------" << std::endl;
+	
 	std::cout << "Comparison operators" << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 	std::cout << "(a > b)" << std::endl;
@@ -54,20 +67,8 @@ int	main( void ) {
 	std::cout << (a == b) << std::endl;
 	std::cout << "(a != b)" << std::endl;
 	std::cout << (a != b) << std::endl;
-	std::cout << "----------------------------------------------------" << std::endl;
-
-	std::cout << "Arithmetic operators" << std::endl;
-	std::cout << "----------------------------------------------------" << std::endl;
-	std::cout << "(a + b)" << std::endl;
-	std::cout << (a + b) << std::endl;
-	std::cout << "(a - b)" << std::endl;
-	std::cout << (a - b) << std::endl;
-	std::cout << "(a * b)" << std::endl;
-	std::cout << (a * b) << std::endl;
-	std::cout << "(a / b)" << std::endl;
-	std::cout << (a / b) << std::endl;
-	std::cout << "----------------------------------------------------" << std::endl;
 	
+	std::cout << "----------------------------------------------------" << std::endl;
 	std::cout << "Min/Max" << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 	std::cout << "Max" << std::endl;
