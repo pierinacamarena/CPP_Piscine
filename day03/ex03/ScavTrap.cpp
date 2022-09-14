@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:45 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 11:46:55 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/14 21:21:17 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ ScavTrap::ScavTrap( ScavTrap const & st) {
 
 ScavTrap::~ScavTrap( void ) {
 	std::cout << "ScavTrap destructor called" << std::endl;
+}
+
+void	ScavTrap::setEnergyPoints(int n) {
+	this->_energyPoints = n;
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
@@ -56,8 +60,4 @@ void	ScavTrap::attack(const std::string & target)
 			std::cout << "Doesn't have enough hit points to attack :'(" << std::endl;
 		}
 	}
-}
-
-void	ScavTrap::guardGate( void ) {
-	std::cout << "ScavTrap " << this->getName() << "is now in Gate keeper mode" << std::endl;
 }

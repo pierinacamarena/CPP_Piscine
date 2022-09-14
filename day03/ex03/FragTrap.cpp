@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:38 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 11:46:29 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/14 21:19:27 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ FragTrap::FragTrap( FragTrap const & ft ) {
 
 FragTrap::~FragTrap( void ) {
 	std::cout << "FragTrap destructor called" << std::endl;
+}
+
+void	FragTrap::setHitPoints(int n) {
+	this->_hitPoints = n;
+}
+
+void	FragTrap::setAttackDamage(int n) {
+	this->_attackDamage = n;
 }
 
 FragTrap &	FragTrap::operator=(FragTrap const & rhs){

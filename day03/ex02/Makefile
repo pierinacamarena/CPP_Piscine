@@ -6,7 +6,7 @@
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/13 12:25:00 by pierina           #+#    #+#              #
-#    Updated: 2022/09/13 22:14:32 by pcamaren         ###   ########.fr        #
+#    Updated: 2022/09/14 21:10:12 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,4 +40,3 @@ fclean	:	clean
 re	:	fclean all
 
 .PHONY	:	all clean fclean re
-

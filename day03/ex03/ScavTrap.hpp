@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:43 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 13:55:37 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/14 21:09:35 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ public:
 	ScavTrap &	operator=(ScavTrap const & rhs);
 	void		guardGate( void );
 	void 		attack(const std::string& target);
+
+	void		setEnergyPoints(int n);
 private:
 
 };
