@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:43 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 11:46:44 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/14 13:55:37 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap{
+class ScavTrap : public virtual ClapTrap{
 	
 public:
 	ScavTrap( void);

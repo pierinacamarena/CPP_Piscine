@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:41 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 11:46:12 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/14 13:55:27 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 
 public:
 	FragTrap( void );
