@@ -6,13 +6,14 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:29 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 18:56:34 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/15 20:51:24 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog( void ) : Animal("Dog"){
+	this->_dogBrain = new Brain();
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
@@ -22,11 +23,14 @@ Dog::Dog( Dog const & dog ) {
 }
 
 Dog::~Dog( void ) {
+	delete this->_dogBrain;
 	std::cout << "Dog destructor called" << std::endl;
 }
 
 Dog &	Dog::operator=(Dog const & rhs) {
 	this->_type = rhs._type;
+	this->_dogBrain = new Brain();
+	*(this->_dogBrain) = *(rhs._dogBrain);
 	return *this;
 }
 

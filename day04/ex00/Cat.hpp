@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:53 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 13:54:27 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/15 18:56:11 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,13 @@ class Cat : public Animal {
 
 public:
 
+	Cat( void );
+	Cat( Cat const & cat );
+	~Cat( void );
 	
+	Cat &	operator=(Cat const & rhs);
 
-protected:
+	void	makeSound( void ) const;
 
 };
 

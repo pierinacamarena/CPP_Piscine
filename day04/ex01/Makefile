@@ -6,16 +6,17 @@
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 11:37:11 by pierina           #+#    #+#              #
-#    Updated: 2022/09/15 19:53:11 by pcamaren         ###   ########.fr        #
+#    Updated: 2022/09/15 20:01:46 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	animal
+NAME	=	animalBrain
 
 SRCS	=	./main.cpp\
 			./Animal.cpp\
 			./Cat.cpp\
 			./Dog.cpp\
+			./Brain.cpp\
 			./WrongAnimal.cpp\
 			./WrongCat.cpp
 
