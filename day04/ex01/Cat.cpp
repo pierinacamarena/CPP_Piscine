@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 20:42:02 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/16 10:21:28 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat( void ) : Animal("Cat"){
 	return ;
 }
 
-Cat::Cat( Cat const & cat) {
+Cat::Cat( Cat const & cat) : Animal(cat) {
 	*this = cat;
 	std::cout << "Cat copy constructor called" << std::endl;
 }

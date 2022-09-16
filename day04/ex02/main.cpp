@@ -3,35 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:58:16 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/15 21:22:25 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/16 11:04:16 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Brain.hpp"
 
 int main()
 {
 	const AAnimal*		animals[10];
-	// const Animal*		meta = new Animal();
-	// const Animal*		j = new Dog();
-	// const Animal*		i = new Cat();
-	// const WrongAnimal*	wrong = new 	WrongCat();
 	int					k = 0;
 
-	// std::cout << j->getType() << " " << std::endl;
-	// std::cout << i->getType() << " " << std::endl;
-	// i->makeSound(); //will output the cat sound!
-	// j->makeSound();
-	// meta->makeSound();
-	// wrong->makeSound();
 	while (k < 5) {
 		std::cout << "-----------------------------------" << std::endl;
 		animals[k] = new Dog();

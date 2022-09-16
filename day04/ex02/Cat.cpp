@@ -3,27 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 21:29:29 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/16 10:46:37 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "AAnimal.hpp"
 
-Cat::Cat( void ){
-	this->setType("Cat");
+Cat::Cat( void ) : AAnimal("Cat") {
 	this->_catBrain = new Brain();
 	std::cout << "Cat default constructor" << std::endl;
 	return ;
 }
 
-Cat::Cat( std::string const type) : _type(type) {
-	std::cout << "Cat string constructor called" << std::endl;
-}
 
-Cat::Cat( Cat const & cat) {
+Cat::Cat( Cat const & cat) : AAnimal(cat) {
 	*this = cat;
 	std::cout << "Cat copy constructor called" << std::endl;
 }
@@ -38,14 +35,6 @@ Cat &	Cat::operator=(Cat const & rhs) {
 	this->_catBrain = new Brain();
 	*(this->_catBrain) = *(rhs._catBrain);
 	return *this;
-}
-
-std::string		Cat::getType( void ) const {
-	return (this->_type);
-}
-
-void			Cat::setType(std::string const type) {
-	this->_type = type;
 }
 
 void	Cat::makeSound( void ) const{

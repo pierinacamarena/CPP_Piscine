@@ -3,21 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
+#    By: pierina <pierina@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/15 11:37:11 by pierina           #+#    #+#              #
-#    Updated: 2022/09/15 21:27:28 by pcamaren         ###   ########.fr        #
+#    Updated: 2022/09/16 11:04:33 by pierina          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	animalBrain
 
 SRCS	=	./main.cpp\
+			./AAnimal.cpp\
 			./Cat.cpp\
 			./Dog.cpp\
-			./Brain.cpp\
-			./WrongAnimal.cpp\
-			./WrongCat.cpp
+			./Brain.cpp
 
 OBJS	=	${SRCS:.c=.o}
 

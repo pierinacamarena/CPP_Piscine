@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:29 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 20:51:24 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/16 10:21:13 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Dog::Dog( void ) : Animal("Dog"){
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog( Dog const & dog ) {
+Dog::Dog( Dog const & dog ) : Animal( dog ){
 	*this = dog;
 	std::cout << "Dog copy constructor called" << std::endl;
 }
