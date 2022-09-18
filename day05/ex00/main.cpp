@@ -5,25 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 16:36:31 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/15 18:54:52 by pcamaren         ###   ########.fr       */
+/*   Created: 2022/09/17 00:40:45 by pcamaren          #+#    #+#             */
+/*   Updated: 2022/09/17 00:41:12 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sample.hpp"
+#include "Bureaucrat.hpp"
 
-int main(){
-
-	Sample	instance1;
-	Sample	instance2( 42 );
-	Sample	instance3( instance1 );
-
-	std::cout << instance1 << std::endl;
-	std::cout << instance2 << std::endl;
-	std::cout << instance3 << std::endl;
-
-	instance3 = instance2;
-	std::cout << instance3 << std::endl;
-
-	return 0;
-}

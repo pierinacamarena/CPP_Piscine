@@ -1,29 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/06 16:36:31 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/15 18:54:52 by pcamaren         ###   ########.fr       */
+/*   Created: 2022/09/16 18:02:35 by pcamaren          #+#    #+#             */
+/*   Updated: 2022/09/16 18:58:58 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sample.hpp"
+#ifndef
+#define
 
-int main(){
+class Ice{
 
-	Sample	instance1;
-	Sample	instance2( 42 );
-	Sample	instance3( instance1 );
+public:
 
-	std::cout << instance1 << std::endl;
-	std::cout << instance2 << std::endl;
-	std::cout << instance3 << std::endl;
+	Ice( void );
+	Ice( Ice const & ice );
+	~Ice( void );
 
-	instance3 = instance2;
-	std::cout << instance3 << std::endl;
+	Ice &		operator=( Ice const & rhs);
+	
+	std::string const & getType() const;
+	void				setType(std::string type);
+	
+	Ice*	clone() const;
+	void	use(ICharacter &target);
+	
+protected:
 
-	return 0;
-}
+};
+
+#endif
