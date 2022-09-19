@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:47 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/19 20:17:16 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:38:03 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form(std::string const name, int const gSign, int const gExec) : _name(nam
 	std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(Form const & copy) : _gradeSign(copy.getGradeSign()), _gradeExec(copy.getGradeExec()) {
+Form::Form(AForm const & copy) : _gradeSign(copy.getGradeSign()), _gradeExec(copy.getGradeExec()) {
 	std::cout << "Form copy constructor called" << std::endl;
 	*this = copy;
 }

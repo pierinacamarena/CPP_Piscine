@@ -6,12 +6,12 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/19 17:40:54 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/19 21:42:08 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <string>
 #include <iostream>
@@ -19,22 +19,23 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 
 public:
-	Form( void );
-	Form( std::string const name, int const gSign, int const gExec);
-	Form(Form const & copy);
-	~Form( void );
+	AForm( void );
+	AForm( std::string const name, int const gSign, int const gExec);
+	AForm(AForm const & copy);
+	virtual	~AForm( void );
 	
-	Form & operator=(Form const & rhs);
+	AForm & 		operator=(AForm const & rhs);
 	
-	std::string	getName() const;
-	bool		getIsSigned() const;
-	int			getGradeSign() const;
-	int 		getGradeExec() const;
+	std::string		getName() const;
+	bool			getIsSigned() const;
+	int				getGradeSign() const;
+	int 			getGradeExec() const;
 	
-	void		beSigned(Bureaucrat & buro);
+	void			beSigned(Bureaucrat & buro);
+	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class		GradeTooHighException : public std::exception {	
 		public:
@@ -66,7 +67,7 @@ private:
 	int	const			_gradeExec;
 };
 
-std::ostream &		operator<<( std::ostream & o, Form const & f);
+std::ostream &		operator<<( std::ostream & o, AForm const & f);
 
 #include "Bureaucrat.hpp"
 

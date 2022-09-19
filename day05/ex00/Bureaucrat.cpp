@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:59 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 13:21:29 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/19 15:57:00 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ Bureaucrat::Bureaucrat( void ) : _name("Unnamed Bureaucrat"), _grade(150) {
 }
 
 Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name), _grade(grade) {
-	if (this->getGrade() < 1 || this->getGrade() > 150)
-		throw Bureaucrat::GradeOutofRangeException();
 	std::cout << this->getName() << " Bureaucrat string/int constructor called" << std::endl;
+	if (this->getGrade() < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (this->getGrade() > 150)
+		throw Bureaucrat::GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & copy) {
@@ -35,8 +37,10 @@ Bureaucrat::~Bureaucrat( void ) {
 Bureaucrat &		Bureaucrat::operator=(Bureaucrat const & rhs){
 	this->_name = rhs.getName();
 	this->_grade = rhs._grade;
-	if (this->getGrade() < 1 || this->getGrade() > 150)
-		throw Bureaucrat::GradeOutofRangeException();
+	if (this->getGrade() < 1)
+		throw Bureaucrat::GradeTooHighException();
+	if (this->getGrade() > 150)
+		throw Bureaucrat::GradeTooLowException();
 	return (*this);
 }
 	

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:40:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 13:11:05 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/19 17:15:26 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ int main( void ) {
 	Bureaucrat ardi("Ardi", 37);
 
 	std::cout << "-------------------------------------------------------" << std::endl;
-	std::cout << gagi.getName() << " 's grade is " << gagi.getGrade() << std::endl;
-	std::cout << cuysin.getName() << " 's grade is " << cuysin.getGrade() << std::endl;
-	std::cout << ardi.getName() << " 's grade is " << ardi.getGrade() << std::endl;
+	std::cout << gagi << std::endl;
+	std::cout << cuysin << std::endl;
+	std::cout << ardi << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << "Valid Increment of grade" << std::endl;
@@ -34,9 +34,9 @@ int main( void ) {
 	ardi.incrementGrade();
 	ardi.incrementGrade();
 	std::cout << "-------------------------------------------------------" << std::endl;
-	std::cout << gagi.getName() << " 's grade is " << gagi.getGrade() << std::endl;
-	std::cout << cuysin.getName() << " 's grade is " << cuysin.getGrade() << std::endl;
-	std::cout << ardi.getName() << " 's grade is " << ardi.getGrade() << std::endl;
+	std::cout << gagi << std::endl;
+	std::cout << cuysin << std::endl;
+	std::cout << ardi << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
 
 	std::cout << "Valid Decrement of grade" << std::endl;
@@ -47,9 +47,9 @@ int main( void ) {
 	ardi.decrementGrade();
 	ardi.decrementGrade();
 	std::cout << "-------------------------------------------------------" << std::endl;
-	std::cout << gagi.getName() << " 's grade is " << gagi.getGrade() << std::endl;
-	std::cout << cuysin.getName() << " 's grade is " << cuysin.getGrade() << std::endl;
-	std::cout << ardi.getName() << " 's grade is " << ardi.getGrade() << std::endl;
+	std::cout << gagi << std::endl;
+	std::cout << cuysin << std::endl;
+	std::cout << ardi << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
 
 	std::cout << "Creating invalid Bureaucrats" << std::endl;
@@ -106,5 +106,11 @@ int main( void ) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+
+	std::cout << "Testing overload of the insertion («) operator" << std::endl;
+	std::cout << buro1 << std::endl;
+	std::cout << buro2 << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+
 	return (0);
 }

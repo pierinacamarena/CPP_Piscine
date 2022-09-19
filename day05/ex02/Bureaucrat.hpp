@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:53 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 15:54:25 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:30:46 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <string>
 #include <iostream>
+
+
+class Form;
 
 class Bureaucrat {
 
@@ -33,6 +36,7 @@ public:
 	void				incrementGrade();
 	void				decrementGrade();
 
+	void				signForm(Form const & f);
 
 	class GradeTooHighException : public std::exception {
 		public:
@@ -50,6 +54,15 @@ public:
 			}
 	};
 
+	class GradeOutofRangeException : public std::exception
+	{
+		public:
+			virtual const char *what() const throw() {
+
+				return ("Grade is out of range");
+			}
+	};
+
 protected:
 
 	std::string			_name;
@@ -58,5 +71,7 @@ protected:
 };
 
 std::ostream &		operator<<( std::ostream & o, Bureaucrat const & b);
+
+#include "AForm.hpp"
 
 #endif
