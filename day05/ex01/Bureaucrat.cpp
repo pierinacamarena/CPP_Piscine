@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:59 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 13:21:29 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/19 13:13:44 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::~Bureaucrat( void ) {
 	std::cout << this->getName() << "Bureaucrat destructor called" << std::endl;
 }
 
-Bureaucrat &		Bureaucrat::operator=(Bureaucrat const & rhs){
+Bureaucrat &		Bureaucrat::operator=(Bureaucrat const & rhs) {
 	this->_name = rhs.getName();
 	this->_grade = rhs._grade;
 	if (this->getGrade() < 1 || this->getGrade() > 150)
