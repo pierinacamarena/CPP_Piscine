@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/19 21:42:08 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:34:48 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-#define AFORM_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
 
 #include <string>
 #include <iostream>
@@ -19,15 +19,15 @@
 
 class Bureaucrat;
 
-class AForm {
+class Form {
 
 public:
-	AForm( void );
-	AForm( std::string const name, int const gSign, int const gExec);
-	AForm(AForm const & copy);
-	virtual	~AForm( void );
+	Form( void );
+	Form( std::string const name, int const gSign, int const gExec);
+	Form(Form const & copy);
+	virtual	~Form( void );
 	
-	AForm & 		operator=(AForm const & rhs);
+	Form & 		operator=(Form const & rhs);
 	
 	std::string		getName() const;
 	bool			getIsSigned() const;
@@ -67,7 +67,7 @@ private:
 	int	const			_gradeExec;
 };
 
-std::ostream &		operator<<( std::ostream & o, AForm const & f);
+std::ostream &		operator<<( std::ostream & o, Form const & f);
 
 #include "Bureaucrat.hpp"
 

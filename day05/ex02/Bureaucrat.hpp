@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:53 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 20:30:46 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:34:36 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,6 @@ protected:
 
 std::ostream &		operator<<( std::ostream & o, Bureaucrat const & b);
 
-#include "AForm.hpp"
+#include "Form.hpp"
 
 #endif
