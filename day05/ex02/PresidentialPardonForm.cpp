@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:24:43 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/20 12:12:45 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/20 19:17:12 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,10 @@ std::string					PresidentialPardonForm::getTarget() const {
 }
 
 void						PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-	
+	if (this->getIsSigned())
+	{
+		if (executor.getGrade() > this->getGradeExec()) {
+			std::cout << "The grade of " << executor.getName() << "is too low" << std::endl;
+		}
+	}
 }
