@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:45 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 21:21:17 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:19:47 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap("default", 100, 50, 20) {
 	std::cout << "ScavTrap String constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & st) {
+ScavTrap::ScavTrap( ScavTrap const & st) : ClapTrap(st.getName(), st.getHitPoints(), st.getEnergyPoints(), st.getAttackDamage()){
 	*this = st;
 	std::cout << "ScavTrap copy constructor called" << std::endl;
 }

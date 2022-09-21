@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:24:55 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/13 21:43:15 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:08:43 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ ClapTrap::~ClapTrap( void ){
 	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
-std::string	ClapTrap::getName() {
+std::string	ClapTrap::getName() const {
 	return (this->_name);
 }
 
-int			ClapTrap::getHitPoints() {
+int			ClapTrap::getHitPoints() const {
 	return (this->_hitPoints);
 }
 
-int			ClapTrap::getEnergyPoints() {
+int			ClapTrap::getEnergyPoints() const {
 	return (this->_energyPoints);
 }
 
-int			ClapTrap::getAttackDamage() {
+int			ClapTrap::getAttackDamage() const {
 	return (this->_attackDamage);
 }
 
@@ -73,7 +73,7 @@ void 		ClapTrap::attack(const std::string& target) {
 	else {
 		if (this->getEnergyPoints() <= 0) {
 			std::cout << this->getName();
-			std::cout << "Doesn't have enough energy points to attack :'(" << std::endl;
+			std::cout << " doesn't have enough energy points to attack :'(" << std::endl;
 		}
 		if (this->getHitPoints() <= 0) {
 			std::cout << this->getName();
@@ -99,11 +99,11 @@ void 		ClapTrap::beRepaired(unsigned int amount) {
 	else {
 		if (this->getEnergyPoints() <= 0) {
 			std::cout << this->getName();
-			std::cout << "Doesn't have enough hit points to repair :'(" << std::endl;
+			std::cout << " doesn't have enough hit points to repair :'(" << std::endl;
 		}
 		if (this->getHitPoints() <= 0) {
 			std::cout << this->getName();
-			std::cout << "Doesn't have enough hit points to attack :'(" << std::endl;
+			std::cout << " doesn't have enough hit points to attack :'(" << std::endl;
 		}
 	}
 }

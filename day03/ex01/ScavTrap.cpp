@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 17:43:38 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/13 21:43:31 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 12:08:59 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ ScavTrap::ScavTrap( void ) : ClapTrap("default", 100, 50, 20) {
 	std::cout << "ScavTrap String constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap( ScavTrap const & st) {
-	*this = st;
+ScavTrap::ScavTrap( ScavTrap const & st) : ClapTrap(st.getName(), st.getHitPoints(), st.getEnergyPoints(), st.getAttackDamage()){
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = st;
 }
 
 ScavTrap::~ScavTrap( void ) {
@@ -60,5 +60,5 @@ void	ScavTrap::attack(const std::string & target)
 }
 
 void	ScavTrap::guardGate( void ) {
-	std::cout << "ScavTrap " << this->getName() << "is now in Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap " << this->getName() << " is now in Gate keeper mode" << std::endl;
 }

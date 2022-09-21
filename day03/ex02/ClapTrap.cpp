@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:24:55 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 11:45:27 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/21 13:59:41 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ ClapTrap::~ClapTrap( void ){
 	std::cout << "ClapTrap Destructor called" << std::endl;
 }
 
-std::string	ClapTrap::getName() {
+std::string	ClapTrap::getName() const {
 	return (this->_name);
 }
 
-int			ClapTrap::getHitPoints() {
+int			ClapTrap::getHitPoints() const {
 	return (this->_hitPoints);
 }
 
-int			ClapTrap::getEnergyPoints() {
+int			ClapTrap::getEnergyPoints() const {
 	return (this->_energyPoints);
 }
 
-int			ClapTrap::getAttackDamage() {
+int			ClapTrap::getAttackDamage() const {
 	return (this->_attackDamage);
 }
 

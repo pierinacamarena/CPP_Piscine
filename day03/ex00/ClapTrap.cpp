@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:24:55 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/13 20:59:47 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:02:23 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ ClapTrap::~ClapTrap( void ){
 	std::cout << "Destructor called" << std::endl;
 }
 
-std::string	ClapTrap::getName() {
+std::string	ClapTrap::getName() const {
 	return (this->_name);
 }
 
-int			ClapTrap::getHitPoints() {
+int			ClapTrap::getHitPoints() const {
 	return (this->_hitPoints);
 }
 
-int			ClapTrap::getEnergyPoints() {
+int			ClapTrap::getEnergyPoints() const {
 	return (this->_energyPoints);
 }
 
-int			ClapTrap::getAttackDamage() {
+int			ClapTrap::getAttackDamage() const {
 	return (this->_attackDamage);
 }
 

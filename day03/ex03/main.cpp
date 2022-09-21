@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:24:56 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/14 21:39:13 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:23:51 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ int	main( void ) {
 	printStats(pierina, francesca, mateo, george, rambo);
 	std::cout << "----------------------------------------------------" << std::endl;
 	rambo.whoAmI();
+	std::cout << "----------------------------------------------------" << std::endl;
 }

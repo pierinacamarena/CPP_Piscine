@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 19:44:47 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/13 21:41:47 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 11:59:51 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main( void ) {
 	
 	std::cout << std::endl << "----------------------------------------------------" << std::endl;
 	printStats(pierina, francesca, mateo);
+	
 	std::cout << "Fight starts" << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 	pierina.attack("Francesca");
@@ -56,11 +57,15 @@ int	main( void ) {
 	mateo.attack("Pierina");
 	pierina.takeDamage(mateo.getAttackDamage());
 	printStats(pierina, francesca, mateo);
+	
 	std::cout << "Fight again" << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 	francesca.attack("Pierina");
 	pierina.takeDamage(20);
 	pierina.beRepaired(3);
+	mateo.attack("Francesca");
+	francesca.takeDamage(mateo.getAttackDamage());
+	mateo.guardGate();
 	printStats(pierina, francesca, mateo);
 	std::cout << "----------------------------------------------------" << std::endl;
 	

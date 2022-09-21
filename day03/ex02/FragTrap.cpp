@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:26:38 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/13 22:08:18 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 14:14:37 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ FragTrap::FragTrap( std::string name ) : ClapTrap(name, 100, 100, 30) {
 	std::cout << "FragTrap String constructor called" << std::endl;
 }
 
-FragTrap::FragTrap( FragTrap const & ft ) {
+FragTrap::FragTrap( FragTrap const & ft ) : ClapTrap(ft.getName(), ft.getHitPoints(), ft.getEnergyPoints(), ft.getAttackDamage()){
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 	*this = ft;
 }
@@ -38,5 +38,5 @@ FragTrap &	FragTrap::operator=(FragTrap const & rhs){
 }
 
 void	FragTrap::highFivesGuys(void){
-	std::cout << this->getName() << "says: High Five peeps ! :D" << std::endl;
+	std::cout << this->getName() << " says: High Five peeps ! :D" << std::endl;
 }

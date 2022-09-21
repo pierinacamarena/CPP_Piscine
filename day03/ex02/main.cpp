@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 22:08:50 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/13 22:14:10 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 13:58:43 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,14 @@ int	main( void ) {
 	pierina.takeDamage(mateo.getAttackDamage());
 	mateo.attack("George");
 	george.takeDamage(mateo.getAttackDamage());
+	george.highFivesGuys();
 	printStats(pierina, francesca, mateo, george);
 	std::cout << "Fight again" << std::endl;
 	std::cout << "----------------------------------------------------" << std::endl;
 	francesca.attack("Pierina");
 	pierina.takeDamage(20);
 	pierina.beRepaired(3);
+	george.highFivesGuys();
 	printStats(pierina, francesca, mateo, george);
 	std::cout << "----------------------------------------------------" << std::endl;
 	

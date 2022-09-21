@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 16:30:07 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/13 17:32:49 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/21 11:51:08 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,16 @@ int	main( void ) {
 	two.attack("Pierina");
 	one.takeDamage(20);
 	one.beRepaired(3);
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
+	two.attack("Pierina");
 	printStats(one, two);
 	std::cout << "----------------------------------------------------" << std::endl;
-	
 }
