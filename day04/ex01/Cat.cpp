@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/16 10:21:28 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:05:28 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat( void ) : Animal("Cat"){
-	this->_catBrain = new Brain();
 	std::cout << "Cat default constructor" << std::endl;
+	this->_catBrain = new Brain();
 	return ;
 }
 
 Cat::Cat( Cat const & cat) : Animal(cat) {
-	*this = cat;
 	std::cout << "Cat copy constructor called" << std::endl;
+	*this = cat;
 }
 
 Cat::~Cat( void ) {
-	delete this->_catBrain;
 	std::cout << "Cat destructor called" << std::endl;
+	delete this->_catBrain;
 }
 
 Cat &	Cat::operator=(Cat const & rhs) {
@@ -37,4 +37,8 @@ Cat &	Cat::operator=(Cat const & rhs) {
 
 void	Cat::makeSound( void ) const{
 	std::cout << "Meooow meooow meooow" << std::endl;
+}
+
+Brain*	Cat::getBrain( void ) const {
+	return (this->_catBrain);
 }

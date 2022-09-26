@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:53 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 20:12:18 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/26 20:58:07 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Cat &	operator=(Cat const & rhs);
 
 	void	makeSound( void ) const;
+	Brain*	getBrain( void ) const;
 
 private:
 

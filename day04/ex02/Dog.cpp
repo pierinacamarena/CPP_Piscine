@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:29 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/16 10:46:50 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:28:45 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ Dog &	Dog::operator=(Dog const & rhs) {
 
 void	Dog::makeSound( void ) const {
 	std::cout << "Woof woof woof" << std::endl;
+}
+
+Brain*	Dog::getBrain( void ) const {
+	return (this->_dogBrain);
 }

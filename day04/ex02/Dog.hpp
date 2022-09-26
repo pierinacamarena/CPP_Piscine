@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:27 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/16 10:34:56 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:27:05 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Dog &	operator=(Dog const & rhs);
 
 	void	makeSound( void ) const;
+	Brain*	getBrain( void ) const;
 
 protected:
 

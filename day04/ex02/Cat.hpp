@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:53 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/16 10:35:04 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:26:56 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	Cat &	operator=(Cat const & rhs);
 
 	void	makeSound( void ) const;
+	Brain*	getBrain( void ) const;
 
 protected:
 

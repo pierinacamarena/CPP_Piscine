@@ -6,17 +6,20 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:09:21 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/23 23:08:23 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:36:31 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "ScalarConvert.hpp"
 
 int main(int ac, char **av) {
 	if (ac == 2) {
 		std::string	stLit = static_cast<std::string>(av[1]);
-		
-		
+
+		std::cout << stLit << std::endl;
+
+		ScalarConvert	literal(stLit);
+		// literal.setType();
 		//check if the literal belongs to one of the following scalar types
 		//char --> 'c', 'a', ...
 		//int, --> 0, -42, 42, ..

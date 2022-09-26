@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:58:16 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/16 11:03:14 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 21:23:19 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,20 @@
 
 int main()
 {
+	std::cout << "------------------------------------------------------------------" << std::endl;
+	std::cout << "Test given by sujet" << std::endl;
+	std::cout << std::endl;
+
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	delete j;//should not create a leak
+	delete i;
+
+	std::cout << std::endl;
+	std::cout << "------------------------------------------------------------------" << std::endl;
+	std::cout << "Array of animal objects" << std::endl;
+	std::cout << std::endl;
+	
 	const Animal*		animals[10];
 
 	int					k = 0;
@@ -41,8 +55,18 @@ int main()
 		delete animals[k];
 		k++;
 	}
+	std::cout << std::endl;
+	std::cout << "------------------------------------------------------------------" << std::endl;
+	std::cout << "Deep copy" << std::endl;
+	std::cout << std::endl;
+	Cat michi;
+	std::cout << std::endl;
+	Cat MichiMeow(michi);
+	std::cout << std::endl;
+
 	return 0;
 }
+
 
 // In your main function, create and fill an array of Animal objects. Half of it will
 // be Dog objects and the other half will be Cat objects. At the end of your program
