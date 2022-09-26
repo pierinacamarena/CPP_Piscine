@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:11 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/26 22:01:17 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/26 22:31:36 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ bool	ScalarConvert::isInt() {
 }
 
 bool	ScalarConvert::isDouble() {
+	if (_sLit == "-inf" || _sLit == "+inf" || _sLit == "nan")
+		return (true);
 	size_t	i = 0;
 	size_t	len = _sLit.length();
 	if (_sLit[0] == '+' || _sLit[1] == '-')
@@ -74,6 +76,8 @@ bool	ScalarConvert::isDouble() {
 }
 
 bool	ScalarConvert::isFloat() {
+	if (_sLit == "-inff" || _sLit == "+inff" || _sLit == "nanf")
+		return (true);
 	size_t	i = 0;
 	size_t	len = _sLit.length();
 	if (_sLit[0] == '+' || _sLit[1] == '-')
@@ -106,10 +110,29 @@ void	ScalarConvert::setType() {
 		else if (this->isFloat())
 			this->_type = "float";
 		else
-		{	this->_type = "meow";}
+		{
+			this->_type = "meow";
+			std::cout << "it is not one of the required type" << std::endl;
+		}
 		std::cout << "type: " << _type << std::endl;	
 	}
 	else {
 		std::cout << "Error: empty string" << std::endl;
+	}
+}
+
+
+void	ScalarConvert::fullConversion() {
+	if (_type == "char"){
+		//convert to char
+	}
+	else if (_type == "float") {
+		//convert to float
+	}
+	else if (_type == "double") {
+		//convert to double
+	}
+	else if (_type == "int") {
+		//convert to int
 	}
 }

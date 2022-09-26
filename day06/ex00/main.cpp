@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 21:09:21 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/26 18:36:31 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/26 22:27:00 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,7 @@ int main(int ac, char **av) {
 		std::cout << stLit << std::endl;
 
 		ScalarConvert	literal(stLit);
-		// literal.setType();
-		//check if the literal belongs to one of the following scalar types
-		//char --> 'c', 'a', ...
-		//int, --> 0, -42, 42, ..
-		//float, --> 0.0f, -4.2f, 4.2f, ..  (including -inff, +inff)
-		//double --> 0.0, -4.2, 4.2, .. (-infl, +inf and nan)
+		
 	
 
 		//except for char, only decimal notation will be used
