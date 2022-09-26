@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:47 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/19 20:38:03 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/23 19:23:07 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Form::Form(std::string const name, int const gSign, int const gExec) : _name(nam
 	std::cout << "Form constructor called" << std::endl;
 }
 
-Form::Form(AForm const & copy) : _gradeSign(copy.getGradeSign()), _gradeExec(copy.getGradeExec()) {
+Form::Form(Form const & copy) : _gradeSign(copy.getGradeSign()), _gradeExec(copy.getGradeExec()) {
 	std::cout << "Form copy constructor called" << std::endl;
 	*this = copy;
 }
@@ -57,13 +57,15 @@ int 		Form::getGradeExec() const {
 
 void		Form::beSigned(Bureaucrat & buro) {
 	if (this->getIsSigned() == true) {
-		std::cout << "Form is already signed" << std::endl;
+		std::cout << _name << " is already signed" << std::endl;
 		return;
 	}
 	if ( buro.getGrade() <= this->getGradeSign() )
 			this->_isSigned = true;
-	else
+	else {
+		std::cout << buro.getName() << " could not sign form: " << _name << std::endl;
 		throw Form::GradeTooLowException();
+	}
 }
 
 std::ostream &		operator<<( std::ostream & o, Form const & f) {

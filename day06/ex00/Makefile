@@ -5,24 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/13 12:25:00 by pierina           #+#    #+#              #
-#    Updated: 2022/09/22 19:09:47 by pcamaren         ###   ########.fr        #
+#    Created: 2022/09/23 21:09:15 by pcamaren          #+#    #+#              #
+#    Updated: 2022/09/23 23:10:50 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	diamondTrap
+
+NAME	=	scalarConvert
 
 SRCS	=	./main.cpp\
-			./ScavTrap.cpp\
-			./ClapTrap.cpp\
-			./FragTrap.cpp\
-			./DiamondTrap.cpp
+			./ScalarConvert.cpp
 
 OBJS	=	${SRCS:.c=.o}
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Werror -Wextra -Wshadow -Wno-shadow -std=c++98 
+CFLAGS	=	-Wall -Werror -Wextra -std=c++98 
 
 .c		:	.o
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -41,3 +39,4 @@ fclean	:	clean
 re	:	fclean all
 
 .PHONY	:	all clean fclean re
+

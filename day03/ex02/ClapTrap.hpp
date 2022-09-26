@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:24:57 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/21 13:59:18 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/22 18:39:41 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ public:
 	ClapTrap(std::string name);
 	ClapTrap(std::string name, int hp, int ep, int ad);
 	ClapTrap(ClapTrap const & ct);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	ClapTrap &	operator=(ClapTrap const & rhs);	
-	void 		attack(const std::string& target);
-	void 		takeDamage(unsigned int amount);
-	void 		beRepaired(unsigned int amount);
+	virtual void 		attack(const std::string& target);
+	void 				takeDamage(unsigned int amount);
+	void 				beRepaired(unsigned int amount);
 	
 	//getters
 	std::string	getName(void) const;

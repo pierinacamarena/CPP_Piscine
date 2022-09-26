@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 22:08:50 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/21 13:58:43 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 16:07:41 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ int	main( void ) {
 	pierina.takeDamage(20);
 	pierina.beRepaired(3);
 	george.highFivesGuys();
+	george.attack("Mateo");
+	mateo.takeDamage(george.getAttackDamage());
 	printStats(pierina, francesca, mateo, george);
 	std::cout << "----------------------------------------------------" << std::endl;
 	

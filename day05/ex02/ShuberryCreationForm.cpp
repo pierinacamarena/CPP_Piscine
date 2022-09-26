@@ -1,43 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShuberryCreationForm.cpp                           :+:      :+:    :+:   */
+/*   ShruberryCreationForm.cpp                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:24:57 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/20 17:51:07 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:27:48 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
-#include "ShuberryCreationForm.hpp"
+#include "ShruberryCreationForm.hpp"
 
-ShuberryCreationForm::ShuberryCreationForm() : Form("ShuberryCreationForm", 145, 137), _target("Target"){
+ShruberryCreationForm::ShruberryCreationForm() : Form("ShruberryCreationForm", 145, 137), _target("Target"){
 	std::cout << "Shruberry Creation Form default constructor called" << std::endl;
 }
 
-ShuberryCreationForm::ShuberryCreationForm(std::string target) : Form("ShuberryCreationForm", 145, 137), _target(target){
+ShruberryCreationForm::ShruberryCreationForm(std::string target) : Form("ShruberryCreationForm", 145, 137), _target(target){
 	std::cout << "Shruberry Creation Form string constructor called" << std::endl;
 }
 
-ShuberryCreationForm::ShuberryCreationForm(ShuberryCreationForm const & copy) {
+ShruberryCreationForm::ShruberryCreationForm(ShruberryCreationForm const & copy) {
 	*this = copy;
 	std::cout << "Shruberry Creation Form copy constructor called" << std::endl;
 }
 
-ShuberryCreationForm::~ShuberryCreationForm() {
+ShruberryCreationForm::~ShruberryCreationForm() {
 	std::cout << "Shruberry Creation Form destructor called" << std::endl;	
 }
 
-ShuberryCreationForm &			ShuberryCreationForm::operator=(ShuberryCreationForm const & rhs) {
-	*this = rhs;
+ShruberryCreationForm &			ShruberryCreationForm::operator=(ShruberryCreationForm const & rhs) {
+	this->_target = rhs._target;
+	return *this;
 }
 	
-std::string					ShuberryCreationForm::getTarget() {
+std::string					ShruberryCreationForm::getTarget() const {
 	return (this->_target);
 }
 
-void						execute(Bureaucrat const & executor) const {
-	
+void						ShruberryCreationForm::execute(Bureaucrat const & executor) const{
+	if (this->getIsSigned())
+	{
+		if (executor.getGrade() > this->getGradeExec()) {
+			std::cout << "The grade of " << executor.getName() << " is too low" << std::endl;
+			throw Form::GradeTooLowException();
+		{
+		}
+			std::stringstream	str;
+			str <<  _target << "_shrubbery";
+			std::ofstream outfile (str.str().c_str());
+			for (int i = 0; i <= 255; i++)
+				outfile << char(i);
+			outfile.close();
+		}
+	}
+	else {
+		throw FormNotSignedException();
+		// std::cout << "Form has not been signed yet" << std::endl;
+	}
 }

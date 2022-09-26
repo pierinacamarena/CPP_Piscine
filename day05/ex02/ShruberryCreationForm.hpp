@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShruberryCreation.hpp                              :+:      :+:    :+:   */
+/*   ShruberryCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:24:54 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 21:53:08 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:47:19 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBERRY_CREATION_HPP
-#define SHRUBERRY_CREATION_HPP
+#ifndef SHRUBERRY_CREATION_FORM_HPP
+#define SHRUBERRY_CREATION_FORM_HPP
 
-class ShruberryCreation: public Form {
+#include <string>
+#include <iostream>
+#include <fstream>
+# include <sstream>
+
+class ShruberryCreationForm: public Form {
 
 public:
 
-	ShruberryCreation();
-	ShruberryCreation(std::string target);
-	ShruberryCreation(ShruberryCreation const & copy);
-	~ShruberryCreation();
+	ShruberryCreationForm();
+	ShruberryCreationForm(std::string target);
+	ShruberryCreationForm(ShruberryCreationForm const & copy);
+	virtual ~ShruberryCreationForm();
 
-	ShruberryCreation &			operator=(ShruberryCreation const & rhs);
+	ShruberryCreationForm &			operator=(ShruberryCreationForm const & rhs);
 	
-	std::string					getTarget();
+	std::string					getTarget() const;
 	void						execute(Bureaucrat const & executor) const;
 
 private:

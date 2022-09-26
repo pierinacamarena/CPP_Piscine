@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/13 12:27:54 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/14 12:00:17 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/26 15:54:37 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
-class DiamondTrap : public FragTrap , public ScavTrap {
+class DiamondTrap : public ScavTrap , public FragTrap {
 
 public:
 

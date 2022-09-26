@@ -6,15 +6,18 @@
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/17 00:40:07 by pcamaren          #+#    #+#              #
-#    Updated: 2022/09/19 20:31:01 by pcamaren         ###   ########.fr        #
+#    Updated: 2022/09/22 22:13:39 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	bureaucrat
+NAME	=	theForms
 
 SRCS	=	./main.cpp\
 			./Bureaucrat.cpp\
-			./AForm.cpp
+			./Form.cpp\
+			./PresidentialPardonForm.cpp\
+			./RobotomyRequestForm.cpp\
+			./ShuberryCreationForm.cpp
 
 OBJS	=	${SRCS:.c=.o}
 

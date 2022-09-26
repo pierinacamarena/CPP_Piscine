@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/20 10:34:48 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/23 21:04:58 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,12 @@ public:
 			}
 	};
 
-	class GradeOutofRangeException : public std::exception
+	class FormNotSignedException : public std::exception
 	{
 		public:
 			virtual const char *what() const throw() {
 
-				return ("Grade is out of range");
+				return ("Form has not been signed");
 			}
 	};
 private:

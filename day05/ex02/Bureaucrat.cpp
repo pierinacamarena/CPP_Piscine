@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:59 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 17:34:09 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/23 20:51:15 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,18 @@ void			Bureaucrat::signForm(Form const &f) {
 	else
 		std::cout << "Bureaucrat " << this->getName() << "could not signed the form: " << f.getName() << " because its grade is too low" << std::endl;
 }
+
+void			Bureaucrat::executeForm(Form const & form) {
+	try {
+		form.execute(*this);
+	}
+	catch (std::exception & e){
+		std::cout << _name << " was not able to execute the form" << form.getName() << " because its " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << _name << " executed " << form.getName() << std::endl;
+}
+
 
 std::ostream &		operator<<( std::ostream & o, Bureaucrat const & b) {
 	o << b.getName() << ", bureaucrat grade: " << b.getGrade();
