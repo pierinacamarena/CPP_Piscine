@@ -6,7 +6,7 @@
 /*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:54:21 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/15 13:11:31 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/27 11:25:58 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ public:
 	void			setType(std::string const type);
 
 	virtual void	makeSound( void ) const;
+	virtual Brain*	getBrain( void ) const;
 
 protected:
 

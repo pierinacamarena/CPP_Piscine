@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:58:16 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/26 21:23:19 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:50:03 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main()
 		delete animals[k];
 		k++;
 	}
+
 	std::cout << std::endl;
 	std::cout << "------------------------------------------------------------------" << std::endl;
 	std::cout << "Deep copy" << std::endl;
@@ -66,9 +67,3 @@ int main()
 
 	return 0;
 }
-
-
-// In your main function, create and fill an array of Animal objects. Half of it will
-// be Dog objects and the other half will be Cat objects. At the end of your program
-// execution, loop over this array and delete every Animal. You must delete directly dogs
-// and cats as Animals. The appropriate destructors must be called in the expected order.

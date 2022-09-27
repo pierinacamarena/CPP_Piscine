@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:27 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/26 21:27:05 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:56:00 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,12 @@ public:
 
 	Dog( void );
 	Dog( Dog const & dog );
-	~Dog( void );
+	virtual ~Dog( void );
 	
 	Dog &	operator=(Dog const & rhs);
 
 	void	makeSound( void ) const;
 	Brain*	getBrain( void ) const;
-
-protected:
-
-	std::string	_type;
 
 private:
 
