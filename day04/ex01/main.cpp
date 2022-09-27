@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 21:58:16 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/27 11:50:03 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/27 17:06:25 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main()
 		std::cout << "-----------------------------------" << std::endl << std::endl;
 		k++;
 	}
+
 	k = 0;
 	while (k < 10) {
 		delete animals[k];
@@ -63,6 +64,27 @@ int main()
 	Cat michi;
 	std::cout << std::endl;
 	Cat MichiMeow(michi);
+	std::cout << std::endl;
+
+	std::cout << std::endl;
+	std::cout << "------------------------------------------------------------------" << std::endl;
+	std::cout << "Brain test :D" << std::endl;
+	std::cout << std::endl;
+
+	const Dog* doggy = new Dog();
+	Brain*	brain = doggy->getBrain();
+
+	brain->ideas[0] = "i think wooof woof !";
+	brain->ideas[1] = "hooman is tired?";
+	brain->ideas[2] = "hooman says i am a good boi!";
+	brain->ideas[3] = "hooman wants to get a cat, i dont like cats";
+
+	std::cout << brain->ideas[0] << std::endl;
+	std::cout << brain->ideas[1] << std::endl;
+	std::cout << brain->ideas[2] << std::endl;
+	std::cout << brain->ideas[3] << std::endl;
+
+	delete doggy;
 	std::cout << std::endl;
 
 	return 0;

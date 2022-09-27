@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConvert.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:11 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/27 13:52:49 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/27 21:58:32 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ScalarConvert::ScalarConvert() {
 	return;
 }
 
-ScalarConvert::ScalarConvert(std::string s) : _sLit(s){
+ScalarConvert::ScalarConvert(std::string s, double d) : _sLit(s), _d(d){
 	this->setType();
 	return;
 }
@@ -33,6 +33,7 @@ ScalarConvert::~ScalarConvert() {
 ScalarConvert &	ScalarConvert::operator=(ScalarConvert const & rhs) {
 	this->_sLit = rhs._sLit;
 	this->_type = rhs._type;
+	this->_d = rhs._d;
 	return *this;
 }
 
@@ -111,7 +112,7 @@ void	ScalarConvert::setType() {
 			this->_type = "float";
 		else
 		{
-			this->_type = "meow";
+			this->_type = "undefined";
 			std::cout << "it is not one of the required type" << std::endl;
 		}
 		std::cout << "type: " << _type << std::endl;	
@@ -121,34 +122,42 @@ void	ScalarConvert::setType() {
 	}
 }
 
-
-void	ScalarConvert::fullConversion() {
-	if (_type == "char"){
-		//convert to char
-	}
-	else if (_type == "float") {
-		//convert to float
-	}
-	else if (_type == "double") {
-		//convert to double
-	}
-	else if (_type == "int") {
-		//convert to int
-	}
-}
-
 char			ScalarConvert::convertToChar() {
-	return (static_cast<char>(_sLit));
+	if (_type == "char" && _sLit.length() == 0)
+	{
+		if (!(std::isprint(_sLit[0])))
+		{
+			std::cout << "here" << std::endl;
+			throw ScalarConvert::NonDisplayableException();
+		}
+		return (_sLit[0]);
+	}
+	else {
+		if (!(std::isprint(_sLit[0])))
+		{
+			std::cout << "here" << std::endl;
+			throw ScalarConvert::NonDisplayableException();
+		}
+		return (static_cast<char>(_d));
+	}	
 }
 
 int				ScalarConvert::convertToInt() {
-	
+	if (_type == "char")
+		return (static_cast<int>(_sLit[0]));
+	else
+		return (static_cast<int>(_d));
 }
 
 float			ScalarConvert::convertToFloat() {
-	
+	if (_type == "char") {
+		return (static_cast<float>(_sLit[0]));
+	}
+	else {
+		return (static_cast<float>(_d));
+	}
 }
 
 double			ScalarConvert::convertToDouble() {
-	
+	return (_d);
 }

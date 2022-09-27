@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:54:21 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/27 11:25:58 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/27 16:51:18 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ public:
 	void			setType(std::string const type);
 
 	virtual void	makeSound( void ) const;
-	virtual Brain*	getBrain( void ) const;
 
 protected:
 

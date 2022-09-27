@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:14 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/26 22:29:00 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:41:46 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>  
 
 class	ScalarConvert {
 
 public:
 
 	ScalarConvert();
-	ScalarConvert(std::string s);
+	ScalarConvert(std::string s, double d);
 	ScalarConvert(ScalarConvert const & copy);
 	~ScalarConvert();
 	
@@ -41,11 +42,26 @@ public:
 	void			setType();
 
 	void			fullConversion();
+
+	class 	NonDisplayableException : public std::exception {
+		public:
+			virtual const char * what() const throw() {
+				return ("non displayable");
+			}
+	};
+
+	class GradeTooHighException : public std::exception {
+		public:
+			virtual const char * what() const throw() {
+				return ("impossible");
+			}
+	};
 	
 private:
 
 	std::string	_sLit;
 	std::string	_type;
+	double		_d;
 };
 
 #endif
