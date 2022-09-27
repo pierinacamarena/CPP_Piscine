@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConvert.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:11 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/26 22:31:36 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 13:52:49 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,4 +135,20 @@ void	ScalarConvert::fullConversion() {
 	else if (_type == "int") {
 		//convert to int
 	}
+}
+
+char			ScalarConvert::convertToChar() {
+	return (static_cast<char>(_sLit));
+}
+
+int				ScalarConvert::convertToInt() {
+	
+}
+
+float			ScalarConvert::convertToFloat() {
+	
+}
+
+double			ScalarConvert::convertToDouble() {
+	
 }

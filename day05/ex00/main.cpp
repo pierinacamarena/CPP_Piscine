@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:40:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/19 17:15:26 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:13:19 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,5 @@ int main( void ) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
-
-	std::cout << "Testing overload of the insertion («) operator" << std::endl;
-	std::cout << buro1 << std::endl;
-	std::cout << buro2 << std::endl;
-	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
-
 	return (0);
 }

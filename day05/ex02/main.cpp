@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:40:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/23 20:53:03 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:15:06 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ int main( void ) {
 	ShruberryCreationForm	form3("targer3");
 	PresidentialPardonForm	form4("target4");
 	RobotomyRequestForm		form5("target5");
-	ShruberryCreationForm	form6("targer6");
-	// std::cout << "-------------------------------------------------------------------" << std::endl << std::endl;
+	ShruberryCreationForm	form6("target6");
+	std::cout << "-------------------------------------------------------------------" << std::endl << std::endl;
 
-	// std::cout << "Printing the values of the Bureaucrats" << std::endl;
-	// std::cout << "-------------------------------------------------------------------" << std::endl;
-	// std::cout << gagi << std::endl;
-	// std::cout << cuysin << std::endl;
-	// std::cout << ardi << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// std::cout << "Printing the values of the Forms" << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// std::cout << form1 << std::endl;
-	// std::cout << form2 << std::endl;
-	// std::cout << form3 << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl << std::endl;
+	std::cout << "Printing the values of the Bureaucrats" << std::endl;
+	std::cout << "-------------------------------------------------------------------" << std::endl;
+	std::cout << gagi << std::endl;
+	std::cout << cuysin << std::endl;
+	std::cout << ardi << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
+	std::cout << "Printing the values of the Forms" << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl;
+	std::cout << form1 << std::endl;
+	std::cout << form2 << std::endl;
+	std::cout << form3 << std::endl;
+	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
 	
 	std::cout << "Testing beSigned() function" << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
@@ -104,128 +104,6 @@ int main( void ) {
 	catch (std::exception & e){
 		std::cout << e.what() << std::endl;
 	}
-	// std::cout << "-------------------------------------------------------" << std::endl << std::endl;
-	// std::cout << "Testing execute functions" << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;	
-	// std::cout << "Testing PresidentialPardonForm" << std::endl;
-	// std::cout << "should be executed by ardi if signed" << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// try {
-	// 	form1.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form1.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form1.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form4.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form4.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form4.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// std::cout << "Testing RobotomyRequestForm" << std::endl;
-	// std::cout << "should be executed by cuysin and ardi if signed" << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// try {
-	// 	form2.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form2.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form2.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form5.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form5.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form5.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// std::cout << "Testing ShruberryRequestForm" << std::endl;
-	// std::cout << "should be executed by cuysin and ardi if signed" << std::endl;
-	// std::cout << "-------------------------------------------------------" << std::endl;
-	// try {
-	// 	form3.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form3.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form3.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form6.execute(gagi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form6.execute(cuysin);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try {
-	// 	form6.execute(ardi);
-	// }
-	// catch (std::exception & e){
-	// 	std::cout << e.what() << std::endl;
-	// }
 	std::cout << "-------------------------------------------------------" << std::endl << std::endl;
 	std::cout << "testing the executeForm function" << std::endl;
 	std::cout << "-------------------------------------------------------" << std::endl;
