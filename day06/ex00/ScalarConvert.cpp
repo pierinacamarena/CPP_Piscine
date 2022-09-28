@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:11 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/27 21:58:32 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/28 22:07:10 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ ScalarConvert::ScalarConvert() {
 	return;
 }
 
-ScalarConvert::ScalarConvert(std::string s, double d) : _sLit(s), _d(d){
+ScalarConvert::ScalarConvert(std::string s, double d) : _sLit(s), _d(d), _isNan(false){
+	if (this->isNan())
+		return;
 	this->setType();
 	return;
 }
@@ -37,15 +39,34 @@ ScalarConvert &	ScalarConvert::operator=(ScalarConvert const & rhs) {
 	return *this;
 }
 
-bool	ScalarConvert::isChar() {
+std::string		ScalarConvert::getType() {
+	return (this->_type);
+}
+
+bool			ScalarConvert::isNan() {
+	if (_sLit == "-inff" || _sLit == "+inff" || _sLit == "inff" || _sLit == "nanf" || _sLit == "+nanf") {
+		this->_type = "float";
+		this->_isNan = true;
+		return (true);
+	}
+	else if (_sLit == "-inf" || _sLit == "+inf" || _sLit == "inf" || _sLit == "nan" || _sLit == "+nan") {
+		this->_type = "double";
+		this->_isNan = true;
+		return (true);
+	}
+	this->_isNan = false;
+	return (false);
+}
+
+bool			ScalarConvert::isChar() {
 	if (_sLit.length() == 1 && std::isprint(_sLit[0]) && !std::isdigit(_sLit[0]))
 		return (true);
 	return (false);
 }
 
-bool	ScalarConvert::isInt() {
+bool			ScalarConvert::isInt() {
 	size_t	i = 0;
-	if (_sLit[0] == '+' || _sLit[1] == '-')
+	if (_sLit[0] == '+' || _sLit[0] == '-') 
 		i++;
 	while (i < _sLit.length()) {
 		if (!std::isdigit(_sLit[i]))
@@ -55,12 +76,10 @@ bool	ScalarConvert::isInt() {
 	return (true);
 }
 
-bool	ScalarConvert::isDouble() {
-	if (_sLit == "-inf" || _sLit == "+inf" || _sLit == "nan")
-		return (true);
+bool			ScalarConvert::isDouble() {
 	size_t	i = 0;
 	size_t	len = _sLit.length();
-	if (_sLit[0] == '+' || _sLit[1] == '-')
+	if (_sLit[0] == '+' || _sLit[0] == '-')
 		i++;
 	while (i < len && std::isdigit(_sLit[i]))
 		i++;
@@ -76,12 +95,10 @@ bool	ScalarConvert::isDouble() {
 	return (true);
 }
 
-bool	ScalarConvert::isFloat() {
-	if (_sLit == "-inff" || _sLit == "+inff" || _sLit == "nanf")
-		return (true);
+bool			ScalarConvert::isFloat() {
 	size_t	i = 0;
 	size_t	len = _sLit.length();
-	if (_sLit[0] == '+' || _sLit[1] == '-')
+	if (_sLit[0] == '+' || _sLit[0] == '-')
 		i++;
 	while (i < len && std::isdigit(_sLit[i]))
 		i++;
@@ -99,7 +116,7 @@ bool	ScalarConvert::isFloat() {
 	return (false);
 }
 
-void	ScalarConvert::setType() {
+void			ScalarConvert::setType() {
 	
 	if (_sLit.length() > 0) {
 		if (this->isChar())
@@ -111,11 +128,7 @@ void	ScalarConvert::setType() {
 		else if (this->isFloat())
 			this->_type = "float";
 		else
-		{
 			this->_type = "undefined";
-			std::cout << "it is not one of the required type" << std::endl;
-		}
-		std::cout << "type: " << _type << std::endl;	
 	}
 	else {
 		std::cout << "Error: empty string" << std::endl;
@@ -123,36 +136,37 @@ void	ScalarConvert::setType() {
 }
 
 char			ScalarConvert::convertToChar() {
-	if (_type == "char" && _sLit.length() == 0)
-	{
-		if (!(std::isprint(_sLit[0])))
-		{
-			std::cout << "here" << std::endl;
-			throw ScalarConvert::NonDisplayableException();
-		}
-		return (_sLit[0]);
-	}
+	if (_type == "char" && _sLit.length() == 1)
+			return (_sLit[0]);
 	else {
-		if (!(std::isprint(_sLit[0])))
+		if (_isNan)
+			throw ScalarConvert::ImpossibleException();
+		if (_d < 32 || _d > 126)
 		{
-			std::cout << "here" << std::endl;
-			throw ScalarConvert::NonDisplayableException();
-		}
+			if (_d > 127 || _d < 0)
+				throw ScalarConvert::ImpossibleException();
+			else
+				throw ScalarConvert::NonDisplayableException();}
 		return (static_cast<char>(_d));
 	}	
 }
 
 int				ScalarConvert::convertToInt() {
-	if (_type == "char")
+	if (_type == "char" && _sLit.length() == 1)
 		return (static_cast<int>(_sLit[0]));
 	else
+	{
+		if (_isNan)
+			throw ScalarConvert::ImpossibleException();
+		if ( std::numeric_limits< int>::max() < _d || std::numeric_limits<int>::min() > _d )
+			throw ScalarConvert::OutOfRangeException();
 		return (static_cast<int>(_d));
+	}
 }
 
 float			ScalarConvert::convertToFloat() {
-	if (_type == "char") {
+	if (_type == "char" && _sLit.length() == 1)
 		return (static_cast<float>(_sLit[0]));
-	}
 	else {
 		return (static_cast<float>(_d));
 	}

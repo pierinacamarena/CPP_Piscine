@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:14 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/27 21:41:46 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:33:06 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <iostream>
 #include <string>
-#include <cstdlib>  
+#include <cstdlib> 
+#include <limits>
 
 class	ScalarConvert {
 
@@ -37,6 +38,7 @@ public:
 	bool			isInt();
 	bool			isFloat();
 	bool			isDouble();
+	bool			isNan();
 
 	std::string		getType();
 	void			setType();
@@ -50,18 +52,25 @@ public:
 			}
 	};
 
-	class GradeTooHighException : public std::exception {
+	class ImpossibleException : public std::exception {
 		public:
 			virtual const char * what() const throw() {
 				return ("impossible");
 			}
 	};
 	
+	class OutOfRangeException : public std::exception {
+		public:
+			virtual const char * what() const throw() {
+				return ("out of range number");
+			}
+	};
 private:
 
 	std::string	_sLit;
 	std::string	_type;
 	double		_d;
+	bool		_isNan;
 };
 
 #endif
