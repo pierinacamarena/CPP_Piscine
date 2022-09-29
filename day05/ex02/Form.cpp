@@ -6,14 +6,14 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 13:16:47 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/23 19:23:07 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:39:17 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"Form.hpp"
 
 Form::Form() : _name("Default"), _isSigned(false), _gradeSign(150), _gradeExec(150) {
-	std::cout << "Form default constructor called" << std::endl;
+	// std::cout << "Form default constructor called" << std::endl;
 }
 
 Form::Form(std::string const name, int const gSign, int const gExec) : _name(name), _isSigned(false), _gradeSign(gSign), _gradeExec(gExec){
@@ -21,16 +21,16 @@ Form::Form(std::string const name, int const gSign, int const gExec) : _name(nam
 		throw Form::GradeTooHighException();
 	if (this->getGradeSign() > 150 || this->getGradeExec() > 150)
 		throw Form::GradeTooLowException();
-	std::cout << "Form constructor called" << std::endl;
+	// std::cout << "Form constructor called" << std::endl;
 }
 
 Form::Form(Form const & copy) : _gradeSign(copy.getGradeSign()), _gradeExec(copy.getGradeExec()) {
-	std::cout << "Form copy constructor called" << std::endl;
+	// std::cout << "Form copy constructor called" << std::endl;
 	*this = copy;
 }
 
 Form::~Form() {
-	std::cout << "Form destructor called" << std::endl;
+	// std::cout << "Form destructor called" << std::endl;
 }
 
 Form &	Form::operator=(Form const & rhs) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:40:45 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/27 12:15:06 by pierina          ###   ########.fr       */
+/*   Updated: 2022/09/29 20:42:00 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,20 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShruberryCreationForm.hpp"
 #include "Form.hpp"
+#include <stdlib.h>
 
 int main( void ) {
-
-	std::cout << "Creating valid Bureaucrats " << std::endl;
-	std::cout << "-------------------------------------------------------------------" << std::endl;
+	srand(time(NULL));
 	Bureaucrat gagi("Gagi", 140);
 	Bureaucrat cuysin("Cuysin", 40);
-	Bureaucrat ardi("Ardi", 2);
-	std::cout << "-------------------------------------------------------------------" << std::endl << std::endl;
-	std::cout << "Creating valid Forms " << std::endl;
-	std::cout << "-------------------------------------------------------------------" << std::endl;
+	Bureaucrat ardi("Ardi", 1);
 	PresidentialPardonForm	form1("target1");
 	RobotomyRequestForm		form2("target2");
-	ShruberryCreationForm	form3("targer3");
+	ShruberryCreationForm	form3("target3");
 	PresidentialPardonForm	form4("target4");
 	RobotomyRequestForm		form5("target5");
 	ShruberryCreationForm	form6("target6");
-	std::cout << "-------------------------------------------------------------------" << std::endl << std::endl;
-
+	std::cout << "-------------------------------------------------------------------" << std::endl;
 	std::cout << "Printing the values of the Bureaucrats" << std::endl;
 	std::cout << "-------------------------------------------------------------------" << std::endl;
 	std::cout << gagi << std::endl;

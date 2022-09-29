@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:24:43 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/23 21:05:27 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:40:11 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("PresidentialPardonForm", 25, 5), _target("Target"){
-	std::cout << "Presidential form default constructor called" << std::endl;
+	// std::cout << "Presidential form default constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5), _target(target){
-	std::cout << "Presidential form string constructor called" << std::endl;
+	// std::cout << "Presidential form string constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const & copy) {
 	*this = copy;
-	std::cout << "Presidential form copy constructor called" << std::endl;
+	// std::cout << "Presidential form copy constructor called" << std::endl;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "Presidential form destructor called" << std::endl;
+	// std::cout << "Presidential form destructor called" << std::endl;
 }
 
 PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs) {
@@ -50,6 +50,5 @@ void						PresidentialPardonForm::execute(Bureaucrat const & executor) const{
 	}
 	else {
 		throw FormNotSignedException();
-		// std::cout << "Form has not been signed yet" << std::endl;
 	}
 }

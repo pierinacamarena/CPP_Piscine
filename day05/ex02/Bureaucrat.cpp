@@ -6,30 +6,30 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 00:05:59 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/23 20:51:15 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:38:40 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat( void ) : _name("Unnamed Bureaucrat"), _grade(150) {
-	std::cout << this->getName() << " Bureaucrat default constructor called" << std::endl;
+	// std::cout << this->getName() << " Bureaucrat default constructor called" << std::endl;
 	
 }
 
 Bureaucrat::Bureaucrat( std::string name, int grade) : _name(name), _grade(grade) {
 	if (this->getGrade() < 1 || this->getGrade() > 150)
 		throw Bureaucrat::GradeOutofRangeException();
-	std::cout << this->getName() << " Bureaucrat string/int constructor called" << std::endl;
+	// std::cout << this->getName() << " Bureaucrat string/int constructor called" << std::endl;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & copy) {
 	*this = copy;
-	std::cout << this->getName() << "Bureaucrat copy constructor called" << std::endl;	
+	// std::cout << this->getName() << "Bureaucrat copy constructor called" << std::endl;	
 }
 
 Bureaucrat::~Bureaucrat( void ) {
-	std::cout << this->getName() << "Bureaucrat destructor called" << std::endl;
+	// std::cout << this->getName() << "Bureaucrat destructor called" << std::endl;
 }
 
 Bureaucrat &		Bureaucrat::operator=(Bureaucrat const & rhs) {
@@ -69,8 +69,13 @@ void				Bureaucrat::decrementGrade() {
 void			Bureaucrat::signForm(Form const &f) {
 	if (f.getIsSigned() == true)
 		std::cout << "Bureaucrat " << this->getName() << "signed the form: " << f.getName() << std::endl;
-	else
-		std::cout << "Bureaucrat " << this->getName() << "could not signed the form: " << f.getName() << " because its grade is too low" << std::endl;
+	else {
+		if (this->_grade > f.getGradeExec())
+			std::cout << "Bureaucrat " << this->getName() << "could not signed the form: " << f.getName() << " because its grade is too low" << std::endl;
+		else {
+			std::cout << "Bureaucrat " << this->getName() << "signed the form: " << f.getName() << std::endl;
+		}
+	}
 }
 
 void			Bureaucrat::executeForm(Form const & form) {

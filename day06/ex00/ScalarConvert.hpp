@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:14 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/28 18:33:06 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 20:25:05 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ public:
 	bool			isNan();
 
 	std::string		getType();
-	void			setType();
 
+	void			setType();
 	void			fullConversion();
 
 	class 	NonDisplayableException : public std::exception {

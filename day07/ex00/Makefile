@@ -5,19 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/17 00:40:07 by pcamaren          #+#    #+#              #
-#    Updated: 2022/09/29 20:31:50 by pcamaren         ###   ########.fr        #
+#    Created: 2022/09/29 19:35:02 by pcamaren          #+#    #+#              #
+#    Updated: 2022/09/29 21:11:08 by pcamaren         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	=	theForms
+NAME	=	whatever
 
-SRCS	=	./main.cpp\
-			./Bureaucrat.cpp\
-			./Form.cpp\
-			./PresidentialPardonForm.cpp\
-			./RobotomyRequestForm.cpp\
-			./ShruberryCreationForm.cpp
+SRCS	=	./main.cpp
 
 OBJS	=	${SRCS:.c=.o}
 
@@ -42,4 +37,3 @@ fclean	:	clean
 re	:	fclean all
 
 .PHONY	:	all clean fclean re
-

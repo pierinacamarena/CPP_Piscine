@@ -6,7 +6,7 @@
 /*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 23:09:11 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/28 22:07:10 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 19:05:39 by pcamaren         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ ScalarConvert::ScalarConvert() {
 	return;
 }
 
-ScalarConvert::ScalarConvert(std::string s, double d) : _sLit(s), _d(d), _isNan(false){
-	if (this->isNan())
+ScalarConvert::ScalarConvert(std::string s, double d) : _sLit(s), _d(d), _isNan(false) {
 		return;
 	this->setType();
 	return;
