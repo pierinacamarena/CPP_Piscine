@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serialize.cpp                                      :+:      :+:    :+:   */
+/*   Data.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 21:24:13 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/28 21:26:21 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:18:02 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	SERIALIZE_HPP
-#define SERIALIZE_HPP
+#include "Data.hpp"
 
-
-
-#endif
+uintptr_t	serialize(Data* ptr) {
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+Data*		deserialize(uintptr_t raw) {
+	return (reinterpret_cast<Data *>(raw));
+}

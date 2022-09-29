@@ -3,13 +3,12 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+         #
+#    By: pierina <pierina@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 21:09:15 by pcamaren          #+#    #+#              #
-#    Updated: 2022/09/23 23:10:50 by pcamaren         ###   ########.fr        #
+#    Updated: 2022/09/29 13:45:03 by pierina          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
 
 NAME	=	scalarConvert
 
@@ -39,4 +38,3 @@ fclean	:	clean
 re	:	fclean all
 
 .PHONY	:	all clean fclean re
-

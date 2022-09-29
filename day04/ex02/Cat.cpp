@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:32:50 by pierina           #+#    #+#             */
-/*   Updated: 2022/09/26 21:27:35 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/29 11:07:16 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ Cat::Cat( void ) : AAnimal("Cat") {
 
 
 Cat::Cat( Cat const & cat) : AAnimal(cat) {
+	this->_catBrain = new Brain();
+	*(this->_catBrain) = *(cat._catBrain);
 	*this = cat;
 	std::cout << "Cat copy constructor called" << std::endl;
 }
