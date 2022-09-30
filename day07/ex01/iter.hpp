@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 21:17:07 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/29 21:18:05 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/30 10:02:56 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,14 @@
 #include <iostream>
 
 template <typename T> 
-	void iter(T const x, T const y) {
-	T temp = x;
-	x = y;
-	y = temp;
+	void iter(T (*ptr), int const & size, void f(T const & i)) {
+		for (int i = 0; i < size; i++)
+			f(ptr[i]);
+		return;
 }
 
-template <typename T>
-	T const max(T const & x, T const & y) {
-	return (x > y) ? x : y;
+template <typename T> 
+	void print(T const & t) {
+		std::cout << t << std::endl;
 }
-
-template <typename T>
-	T const min(T const & x, T const & y) {
-	return (x < y) ? x : y;
-}
-
 #endif

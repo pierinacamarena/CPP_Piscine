@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcamaren <pcamaren@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pierina <pierina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 20:24:49 by pcamaren          #+#    #+#             */
-/*   Updated: 2022/09/29 20:40:22 by pcamaren         ###   ########.fr       */
+/*   Updated: 2022/09/30 09:14:25 by pierina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyReq
 	// std::cout << "Robotomy Request Form String constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & copy) {
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & copy) : Form("RobotomyRequestForm", 72, 45) {
 	*this = copy;
 	// std::cout << "Robotomy Request Form copy constructor called" << std::endl;
 	

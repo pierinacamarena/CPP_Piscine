@@ -22,7 +22,7 @@ ShruberryCreationForm::ShruberryCreationForm(std::string target) : Form("Shruber
 	// std::cout << "Shruberry Creation Form string constructor called" << std::endl;
 }
 
-ShruberryCreationForm::ShruberryCreationForm(ShruberryCreationForm const & copy) {
+ShruberryCreationForm::ShruberryCreationForm(ShruberryCreationForm const & copy) : Form("ShruberryCreationForm", 145, 137){
 	*this = copy;
 	// std::cout << "Shruberry Creation Form copy constructor called" << std::endl;
 }
